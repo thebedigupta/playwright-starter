@@ -28,6 +28,28 @@ test.describe("Automate Naukri Job Hunting", () => {
 
     await expect(page).toHaveURL(/homepage/);
 
-    
+    const searchOpen = page.locator(".nI-gNb-sb__main");
+    await searchOpen.click();
+    await expect(searchOpen).toBeVisible();
+    const dropDownMenu = page.locator("#jobType");
+    await dropDownMenu.click();
+
+    await page.locator('li[title="Job"]').click();
+
+    const keywordBox = page.getByPlaceholder(
+      "Enter keyword / designation / companies",
+    );
+
+    await keywordBox.fill(
+      `QA automation, SDET, QA Engineer, QA testing, QA Manual Test Engineer, Quality assurance And Software Test Engineer,`,
+    );
+    const searchBtn = page.locator(".nI-gNb-sb__icon-wrapper");
+    await searchBtn.click();
+    await expect(page).toHaveURL(/qa-automation-sdet/);
+
+    const sortBy = page.locator('#filter-sort');
+    await sortBy.click();
+    await page.locator('li[title="Date"]').click();
+
   });
 });
