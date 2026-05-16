@@ -10,6 +10,7 @@ test.describe("Automate Naukri Job Hunting", () => {
   });
 
   test("Tap on Job Seeker Login", async ({ page }) => {
+    
     // Click on the Job Seeker Login button and verify the drawer appears
 
     await page.locator("#login_Layer").click();
