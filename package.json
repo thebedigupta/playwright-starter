@@ -1,5 +1,5 @@
 {
-  "name": "playwright-starter",
+  "name": "playwright-learning",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {},
@@ -9,7 +9,6 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.8.0",
-    "dotenv": "^17.4.2"
+    "@types/node": "^25.8.0"
   }
 }

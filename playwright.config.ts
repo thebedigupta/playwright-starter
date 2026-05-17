@@ -1,7 +1,4 @@
 import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv'
-import path from 'path'
-dotenv.config({path: path.resolve(__dirname,'.env')})
 
 /**
  * Read environment variables from file.
@@ -15,8 +12,6 @@ dotenv.config({path: path.resolve(__dirname,'.env')})
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  
-  /* Run tests from the "tests" directory, relative to this configuration file. */
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -32,7 +27,6 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-     permissions: ['geolocation'],
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
